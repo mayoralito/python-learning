@@ -1,4 +1,5 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
+import sys
 
 def is_prime( number ):
     for i in range( 2, number ):
@@ -13,7 +14,10 @@ def next_prime( number ):
 
     return prime
 
-number = 457
+number = int(sys.argv[1])
+if not isinstance( number, int):
+  sys.exit(1)
+
 print "The next prime number from %d is %d" % (number, next_prime(number))
 
 
